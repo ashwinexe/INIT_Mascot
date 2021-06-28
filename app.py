@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 video = cv2.VideoCapture("zebra.mp4")
-image = cv2.imread("bg2.jpg")
+image = cv2.imread("bg.jpg")
 
 while True:
     ret, frame = video.read()
@@ -10,7 +10,7 @@ while True:
     frame = cv2.resize(frame, (640, 480))
     image = cv2.resize(image, (640, 480))
 
-    u_green = np.array([104, 200, 70])
+    u_green = np.array([104, 200, 100])
     l_green = np.array([30, 30, 0])
 
     mask = cv2.inRange(frame, l_green, u_green)
